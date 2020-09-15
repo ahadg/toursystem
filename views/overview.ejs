@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ 
+    <link href="/overview/css/bootstrap.min.css" rel="stylesheet">
+    <title>Travel</title>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+        <a class="navbar-brand" href="#">pakwalker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+           
+          </form>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mr-sm-2">
+            <li class="nav-item active">
+                <a class="nav-link btn btn-light" href="#" role="button">Log in</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link btn btn-outline-secondary" href="#">Signup</a>
+            </li>
+          
+          
+          </ul>
+        
+        </div>
+      </nav>
+</head>
+<body>
+ 
+<form method="POST" action="/overview">
+  <div>
+    <input type="radio" name="difficulty" value="easy" checked>
+    <label for="difficulty">
+     Easy
+    </label>
+  </div>
+  <div>
+    <input type="radio" name="difficulty" value="medium" checked>
+    <label for="difficulty">
+     Medium
+    </label>
+  </div>
+  <div>
+    <input type="radio" name="difficulty" value="hard" checked>
+    <label for="difficulty">
+     Hard
+    </label>
+  </div>
+  <button type="submit">Search</button>
+</form>
+   <%
+   let i=0;
+   for(i=0; i<tour.length; i++) { %>
+    <div class="row justify-content-center mt-4">
+    <div class="card mb-3 justify-content-center" style="max-width: 800px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            
+            <img style="vertical-align:middle;" src="/overview/aerial-shot-architecture-bridge-2887493.jpg" class="card-img" alt="...">
+       
+        </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <h5 class="card-title"><%= tour[i].name %></h5>
+              <strong><%= tour[i].ratingAverage%>/5</strong>
+              <p class="card-text"><%= tour[i].decription%></p>
+              
+           
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <p>Tour Length </br> <strong><%= tour[i].duration%> days</strong> </br>Price per days </br>  <strong>Rs. <%= tour[i].price%></strong>
+              </br>  Total cost </br> <strong></strong>
+            </p>
+              
+
+            
+            <button type="button" class="btn btn-primary btn-lg btn-block">View tour</button>
+            </div>
+        </div>
+      </div>
+      </div>
+      </div>
+      <% } %>
+
+    </body> 
+    </html>

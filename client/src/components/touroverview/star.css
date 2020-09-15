@@ -1,0 +1,16 @@
+.carousel{
+    height: 80%;
+    width: 100%;
+  
+}
+input[type="radio"] {
+    display: none;
+}
+.star  {
+    cursor: pointer;
+    transition: color 200ms;
+}
+.yoo {
+    display: flexbox;
+}  
+

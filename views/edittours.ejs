@@ -1,0 +1,371 @@
+<!--
+
+=========================================================
+* Argon Dashboard - v1.1.2
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright 2020 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    Argon Dashboard - Free Dashboard for Bootstrap 4 by Creative Tim
+  </title>
+  <!-- Favicon -->
+  <link href="/assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="/assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
+  <link href="/assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="/assets/css/argon-dashboard.css?v=1.1.2" rel="stylesheet" />
+  <link href="/alert/notifications.css" rel="stylesheet" />
+
+</head>
+
+<body class="">
+  <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+    <div class="container-fluid">
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Brand -->
+     
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+        <!-- Collapse header -->
+        <div class="navbar-collapse-header d-md-none">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a href="../index.html">
+                <img src="../assets/img/brand/blue.png">
+              </a>
+            </div>
+            <div class="col-6 collapse-close">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Form -->
+    
+        <!-- Navigation -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link " href="/dashboardview/dashboard">
+              <i class="ni ni-tv-2 text-primary"></i> Dashboard
+            </a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboardview/addtour">
+              <i class="ni ni-planet text-blue"></i> Add a tour
+            </a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link active" href="/dashboardview/tours">
+              <i class="ni ni-ui-04 text-yellow"></i>   Manage Tours
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboardview/users">
+              <i class="ni ni-single-02 text-red"></i> Manage Users
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboardview/bookings">
+              <i class="ni ni-book-bookmark text-grey"></i> Manage Bookings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a onclick="deleteCookie()" id="sbutton" class="nav-link" >
+              <i class="ni ni-key-25 text-info"></i> Logout
+            </a>
+          </li>
+        </ul>
+        <!-- Divider -->
+      
+        <!-- Heading -->
+      </div>
+    </div>
+  </nav>
+  <div class="main-content">
+    <!-- Navbar -->
+    
+    <!-- End Navbar -->
+    <!-- Header -->
+    
+    <!-- Page content -->
+    <div class="container-fluid">
+      <div class="row">
+       
+        <div class="col-xl-12 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">Edit Tour</h3>
+                </div>
+                <div class="col-4 text-right">
+                  <a href="#!" class="btn btn-sm btn-primary">Settings</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+             
+                <h6 class="heading-small text-muted mb-4">Tour information</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                  
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Tour name</label>
+                        <input type="text" id="tourname" value="<%= tour.name %>" class="form-control form-control-alternative" placeholder="Tour name">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">City</label>
+                        <input type="text" id="city" value="<%= tour.city %>" class="form-control form-control-alternative" placeholder="Tour name">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email">Duration (days)</label>
+                        <input type="number" id="duration" value="<%= tour.duration %>" class="form-control form-control-alternative" placeholder="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-first-name">Price per head</label>
+                        <input type="number" id="price" value="<%= tour.price %>" class="form-control form-control-alternative" placeholder="" >
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-last-name">Group Sizes</label>
+                        <input type="number" id="groupsize" value="<%= tour.groupsize %>" class="form-control form-control-alternative" placeholder="">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-address">Difficulty</label>
+                        <select value="<%= tour.difficultytour %>"  class="form-control-label" id="difficultytour" >
+
+                          <option>easy</option>
+                          <option>medium</option>
+                          <option>Hard</option>
+                        </select> 
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-address">Start Date</label>
+                        <input id="sdate"
+                         class="form-control form-control-alternative" type="date">
+                      </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-address">From</label>
+                        <input id="fromp" value="<%= tour.fromp %>"
+                         class="form-control form-control-alternative" type="text">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-address">To</label>
+                        <input  id="to" value="<%= tour.to %>" class="form-control form-control-alternative" 
+                        placeholder="" type="text">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-address">Off</label>
+                        <input  id="off" value="<%= tour.off %>" class="form-control form-control-alternative"
+                         placeholder=""  type="number">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-address">Minimum Age</label>
+                        <input  id="minage" value="<%= tour.minAge %>" class="form-control form-control-alternative"
+                         placeholder=""  type="number">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-address">Maximum Age</label>
+                        <input  id="maxage" value="<%= tour.maxAge %>" class="form-control form-control-alternative"
+                         placeholder=""  type="number">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             
+                <!-- Address -->
+                <hr class="my-4" />
+                <div class="pl-lg-4">
+                  <h6 class="heading-small text-muted mb-4"> Guide information</h6>
+                 
+                 
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-city">Guide Name</label>
+                        <input type="text" value="<%= tour.tourguidename %>" id="guidename" class="form-control form-control-alternative" placeholder="guide name" > 
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-city">Guide number</label>
+                        <input type="number" value="<%= tour.guidenumber %>" id="guidenumber" class="form-control form-control-alternative" placeholder="Guide number" > 
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-country"> Update Guide picture</label>
+                        <input  class="uploadguide btn btn-sm btn-primary" type="file"  name="myfile"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <br/>
+                        <label class="form-control-label" for="input-country">Gender</label>
+                        <br/>
+                       <select  id="guidegender">
+                        <option>Male</option>
+                        <option>Female</option>
+                       </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4" />
+                
+
+              
+                <!-- Description -->
+              
+                <div class="pl-lg-4">
+                
+                  <h3>Add more photo</h3>
+                  <input class="uploadme  btn btn-sm btn-primary" type="file"  name="myfile"/>
+
+                  <div class="form-group">
+                    <label>What to expect</label>
+                    <textarea value="<%= tour.expect %>" rows="4" id="expect" class="form-control form-control-alternative" placeholder="write here ..."></textarea>
+                  </div>
+                  </div>
+                  <div class="pl-lg-4">
+                    <div class="form-group">
+                      <label>Departure and return</label>
+                      <textarea value="<%= tour.depandretrn %>" rows="4" id="depart" class="form-control form-control-alternative"></textarea>
+                    </div>
+                  </div>
+                    <div class="pl-lg-4">
+                      <div class="form-group">
+                        <label>What is included</label>
+                        <textarea value="<%= tour.included %>" rows="4" id="included" class="form-control form-control-alternative" placeholder="write here ..."></textarea>
+                      
+                        <div class="form-group">
+                          <label>Overview</label>
+                          <textarea rows="4" id="overview" class="form-control form-control-alternative" placeholder="write here ..."></textarea>
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="d1 form-check-input" id="exampleCheck1" value="dinner">
+                          <label class="form-check-label" for="exampleCheck1">Dinner</label>
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="d1 form-check-input" id="exampleCheck1" value="breakfast">
+                          <label class="form-check-label" for="exampleCheck1">Breakfast</label>
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="d1 form-check-input" id="exampleCheck1" value="lunch">
+                          <label class="form-check-label" for="exampleCheck1">Lunch</label>
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="d1 form-check-input" id="exampleCheck1" value="refreshments">
+                          <label class="form-check-label" for="exampleCheck1">Refreshments</label>
+                        </div>
+  
+  
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                            <label class="form-control-label" for="input-country">Hotel  (nights)</label>
+                            <input  value="<%= tour.hotel %>"   id="hotel" class="form-control form-control-alternative" type="number"  />
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                            <label class="form-control-label" for="input-country">Guest House (nights)</label>
+                            <input  value="<%= tour.guesthouse %>"  id="house" class="form-control form-control-alternative" type="number"  />
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                            <label class="form-control-label" for="input-country">Camping (nights)</label>
+                            <input  value="<%= tour.camping %>"  id="camping" class="form-control form-control-alternative" type="number" />
+                          </div>
+                        </div>
+  
+
+                  <button onclick="updatedata('<%= tour.id %>')" id="thebutton" href="#!" class="btn btn-info">Edit Tour</button>
+                </div>
+           
+            
+              
+            </div>
+          </div>
+        
+        </div>
+      </div>
+     
+  
+ 
+      <!-- Footer -->
+     
+    </div>
+  </div>
+
+
+  
+
+
+
+  <script src="/axios.js"></script>
+  <!--   Core   -->
+  <script src="/assets/js/plugins/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/edittour.js"></script>
+  <!--   Optional JS   -->
+  <!--   Argon JS   -->
+  <script src="/assets/js/argon-dashboard.min.js?v=1.1.2"></script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script src="/alert/notifications.js"></script>
+  <script src="/logout.js"></script>
+
+</body>
+
+</html>

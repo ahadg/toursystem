@@ -1,0 +1,17 @@
+export const GET_TOURS = "GET_TOURS";
+export const GET_TOUR = "GET_TOUR";
+export const LANDING_PAGE = 'LANDING_PAGE';
+export const HEART = 'HEART';
+export const ALLHEART = 'ALLHEART';
+export const CREATE_COMMENT = "CREATE_COMMENT";
+export const GET_USER = 'GET_USER';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
+export const LOGIN_FAIL = 'LOGIN_FAIL';
+export const SET_ALERT = 'SET_ALERT';
+export const REMOVE_ALERT = 'REMOVE_ALERT';
+export const AUTHENTICATION_FAIL = "AUTHENTICATION_FAIL";
+export const INITIAL_DATA = "INITIAL_DATA";
+export const GET_BOOKING = "GET_BOOKING";
+//export const REVIEW_LIKE = "REVIEW_LIKE";
+export const REVIEW_LIKEDISLIKE = "REVIEW_DISLIKE";

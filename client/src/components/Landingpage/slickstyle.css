@@ -1,0 +1,33 @@
+.slick-arrow {
+    background-color: white;
+    height: 25px;
+    width: 25px;
+    border-radius: 100px;
+}
+.slick-arrow:hover, .slick-arrow:active {
+    background-color: white !important;
+    
+}
+.slick-prev,
+.slick-next
+{
+    font-size: 15;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+  
+   background-color: white;
+
+    cursor: pointer;
+
+    color:white;
+    border: none;
+    outline: none;
+    background:white;
+}
+
+
